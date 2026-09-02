@@ -249,3 +249,21 @@ span{
     bottom: 0;
     left: 0;
 }
+.healthy-section{
+    background: var(--inner-bg-color);
+    padding-top: 5rem;
+}
+.milky-image img{
+    display: block;
+    bottom: -20px;
+    left: 0;
+}
+
+.healthy-section .content img{
+    width: 15rem;
+    display: block;
+    float: right;
+}
+.healthy-section{
+align-items: flex-end;
+}
