@@ -35,7 +35,7 @@ a{
 }
 
 img{
-    min-width: 100%;
+    max-width: 100%;
     object-fit: cover;
 }
 
@@ -47,6 +47,9 @@ img{
 .container{
     max-width: 85%;
     margin: auto;
+}
+.sections{
+    padding-block: 3rem;
 }
 
 /* Navbar Styling Here*/
@@ -127,11 +130,16 @@ h1{
 }
 .hero-center-image{
     position: absolute;
-    left: 44%;
+    left: 47%;
     transform: translateX(-50%);
-    top: 29%;
-    width: 25vw;
-    rotate: 30deg;
+    top: 22%;
+    width: 26vw;
+    z-index: 10;
+}
+.hero-center-image img{
+    width: 100%;
+    height: auto;
+    transform: rotate(30deg); 
 }
 .hero-right-image,
 .hero-left-image{
@@ -153,4 +161,48 @@ h1{
 .hero-left-image img{
     width: 100%;
     height: auto;
+}
+h2{
+    font-size: 5vw;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+    margin-top: 5rem;
+    font-family: "Bebas Neue", serif;
+}
+
+.card-container{
+    gap: 4rem;
+    height: 80vh;
+    align-items: flex-end;
+}
+.card{
+    flex: 1;
+    background: var(--inner-bg-color);
+    padding: 12rem 2.5rem 2.5rem;
+    border-radius: 1.5rem;
+    position: relative;
+}
+.card-image{
+    width: 20rem;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card .content{
+    justify-content: space-between;
+}
+.card .content p{
+    color: var(--text-color);
+    font-size: 1rem;
+}
+span{
+    font-weight: bold;
+    color: var(--text-color);
+}
+.dark-para{
+    color: var(--text-color);
+    font-size: .95rem;
+    padding: 1rem 0 2rem 0;
 }
