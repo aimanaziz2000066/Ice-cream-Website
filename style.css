@@ -267,3 +267,19 @@ span{
 .healthy-section{
 align-items: flex-end;
 }
+.commitment{
+    text-align: center;
+    background-image: url("images/leaves.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.commitment .container img{
+    width: 29rem;
+}
+
+.commitment .container p{
+    max-width: 650px;
+    margin: auto;
+}
