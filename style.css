@@ -1,87 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* =========================
+   RESET
+========================= */
 
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", serif;
+    font-family: "Poppins", sans-serif;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-:root{
+:root {
     --text-color: #342b0c;
     --bg-color: #fefbeb;
     --inner-bg-color: #ede8d5;
     --btn-color: #f3c30e;
 }
 
-body{
+body {
     background: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
 }
 
-/*Basic Styling*/
-li{
+/* =========================
+   BASIC STYLING
+========================= */
+
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
+    color: inherit;
 }
 
-img{
+img {
     max-width: 100%;
+    display: block;
     object-fit: cover;
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
 }
 
-.container{
+.container {
     max-width: 85%;
     margin: auto;
 }
-.sections{
+
+.sections {
     padding-block: 3rem;
 }
 
-/* Navbar Styling Here*/
-.navbar{
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
     justify-content: space-between;
     height: 13vh;
 }
 
-.navlist{
+.navlist {
     gap: 3rem;
 }
 
-.link{
+.link {
     color: var(--text-color);
-    font-size: .95rem;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
 }
 
-.logo{
+.link:hover {
+    opacity: 0.6;
+}
+
+.logo {
     font-size: 1.3rem;
     color: var(--text-color);
     text-transform: uppercase;
     font-weight: 600;
 }
 
-.fa-ice-cream{
+.fa-ice-cream {
     font-size: 1.8rem;
 }
-.nav-icons{
+
+.nav-icons {
     justify-content: center;
     gap: 1rem;
 }
-.icon{
+
+.icon {
     background: var(--btn-color);
     color: var(--text-color);
     font-size: 1.2rem;
@@ -90,16 +110,19 @@ img{
     border-radius: 50%;
     text-align: center;
     line-height: 40px;
-    border: .1rem solid var(--btn-color);
-    transition: .5s ease-in-out;
+    border: 0.1rem solid var(--btn-color);
+    transition: 0.5s ease-in-out;
 }
 
-.icon:hover{
+.icon:hover {
     background: transparent;
 }
 
-/*Section Styling Here*/
-.hero{
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
     min-height: 120vh;
     background-image: url("images/almonds.png");
     background-position: center;
@@ -107,167 +130,273 @@ img{
     background-size: 57%;
     padding-top: 4rem;
     position: relative;
-    
-
 }
 
-.inner-hero{
+.inner-hero {
     background: var(--inner-bg-color);
     width: 100%;
     border-radius: 3rem;
-    justify-content: center ;
+    justify-content: center;
     padding: 3rem 5rem;
     position: relative;
     isolation: isolate;
+    min-height: 55vh;
 }
 
-h1{
+/* =========================
+   MAIN HEADING
+========================= */
+
+h1 {
     font-size: 14vw;
     letter-spacing: 1rem;
     text-transform: uppercase;
     color: var(--text-color);
-    font-family: "Bebas Neue", serif;
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 0.9;
 }
-.hero-center-image{
+
+/* =========================
+   CENTER ICE CREAM
+========================= */
+
+/*
+   IMPORTANT:
+   Rotation ab IMAGE par nahi hai.
+   GSAP parent ko rotate karega.
+*/
+
+.hero-center-image {
     position: absolute;
+
     left: 47%;
-    transform: translateX(-50%);
     top: 22%;
+
     width: 26vw;
-    z-index: 10;
+
+    z-index: 2;
+
+    /*
+      GSAP transform ko properly control karega.
+      CSS mein rotate() nahi lagana.
+    */
+    transform: translateX(-50%) rotate(30deg);
+
+    transform-origin: center center;
+
+    will-change: transform, top, width;
 }
-.hero-center-image img{
+
+/*
+   IMPORTANT:
+   Yahan rotate(30deg) bilkul nahi lagani.
+*/
+
+.hero-center-image img {
     width: 100%;
     height: auto;
-    transform: rotate(30deg); 
+    display: block;
+    transform: none;
 }
+
+/* =========================
+   LEFT & RIGHT HERO IMAGES
+========================= */
+
 .hero-right-image,
-.hero-left-image{
+.hero-left-image {
     position: absolute;
     width: 12vw;
     top: 0;
 }
-.hero-right-image img{
+
+.hero-right-image img,
+.hero-left-image img {
     width: 100%;
     height: auto;
 }
-.hero-right-image{
+
+.hero-right-image {
     right: 0;
     z-index: -1;
 }
-.hero-left-image{
+
+.hero-left-image {
     left: 0;
 }
-.hero-left-image img{
-    width: 100%;
-    height: auto;
-}
-h2{
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+h2 {
     font-size: 5vw;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
     text-transform: uppercase;
     color: var(--text-color);
     margin-top: 5rem;
-    font-family: "Bebas Neue", serif;
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 1;
 }
 
-.card-container{
+/* =========================
+   PRODUCT CARDS
+========================= */
+
+.card-container {
     gap: 4rem;
     height: 80vh;
     align-items: flex-end;
 }
-.card{
+
+.card {
     flex: 1;
     background: var(--inner-bg-color);
     padding: 12rem 2.5rem 2.5rem;
     border-radius: 1.5rem;
     position: relative;
+    min-height: 300px;
 }
-.card-image{
+
+/* Product image */
+
+.card-image {
     width: 20rem;
     position: absolute;
     bottom: 30%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
 }
-.card .content{
+
+.card-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Card content */
+
+.card .content {
     justify-content: space-between;
 }
-.card .content p{
+
+.card .content p {
     color: var(--text-color);
     font-size: 1rem;
 }
-span{
+
+span {
     font-weight: bold;
     color: var(--text-color);
 }
-.dark-para{
+
+/* =========================
+   PARAGRAPH
+========================= */
+
+.dark-para {
     color: var(--text-color);
-    font-size: .95rem;
+    font-size: 0.95rem;
     padding: 1rem 0 2rem 0;
 }
-.production{
+
+/* =========================
+   PRODUCTION SECTION
+========================= */
+
+.production {
     background: var(--text-color);
     text-align: center;
     padding-block: 8rem;
     border-radius: 1.5rem;
     position: relative;
+    overflow: hidden;
 }
 
-.production h2{
+.production h2 {
     color: var(--bg-color);
 }
-.production p{
+
+.production p {
     padding-bottom: 2rem;
 }
 
-
-.btn{
-    background: var(--btn-color);
-    padding: 1rem 2.5rem;
-    color: var(--text-color);
-    font-size: 1.1rem;
-    border: .1rem solid var(--btn-color);
-    border-radius: 100vw;
-}
-
-.light-para{
+.light-para {
     text-align: center;
     font-size: 1.1rem;
     color: var(--bg-color);
 }
-.production-right-image{
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    background: var(--btn-color);
+    padding: 1rem 2.5rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    border: 0.1rem solid var(--btn-color);
+    border-radius: 100vw;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--btn-color);
+}
+
+/* =========================
+   PRODUCTION IMAGES
+========================= */
+
+.production-right-image {
     position: absolute;
     width: 28rem;
     bottom: 0;
     right: 2%;
 }
 
-.production-left-image{
+.production-left-image {
     position: absolute;
-    width: 30rem;
+    width: 40vw;
     bottom: 0;
     left: 0;
+    z-index: 3;
 }
-.healthy-section{
+
+/* =========================
+   HEALTHY SECTION
+========================= */
+
+.healthy-section {
     background: var(--inner-bg-color);
     padding-top: 5rem;
+    align-items: flex-end;
 }
-.milky-image img{
+.milky-image{
+    z-index: 3;
+}
+
+.milky-image img {
     display: block;
+    position: relative;
     bottom: -20px;
     left: 0;
 }
 
-.healthy-section .content img{
+.healthy-section .content img {
     width: 15rem;
     display: block;
     float: right;
 }
-.healthy-section{
-align-items: flex-end;
-}
-.commitment{
+
+/* =========================
+   COMMITMENT SECTION
+========================= */
+
+.commitment {
     text-align: center;
     background-image: url("images/leaves.png");
     background-repeat: no-repeat;
@@ -275,18 +404,189 @@ align-items: flex-end;
     background-position: center;
 }
 
-.commitment .container img{
+.commitment .container img {
     width: 29rem;
+    margin: auto;
 }
 
-.commitment .container p{
+.commitment .container p {
     max-width: 650px;
     margin: auto;
 }
 
-.footer-bottom{
+/* =========================
+   FOOTER
+========================= */
+
+.footer-bottom {
     background: var(--text-color);
+    color: var(--bg-color);
     text-align: center;
     padding-block: 3rem;
     margin-top: 3rem;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+    .container {
+        max-width: 90%;
+    }
+
+    .navlist {
+        gap: 1.5rem;
+    }
+
+    .hero {
+        background-size: 70%;
+    }
+
+    .hero-center-image {
+        width: 32vw;
+    }
+
+    .card-container {
+        gap: 2rem;
+    }
+
+    .card {
+        padding-inline: 1.5rem;
+    }
+
+    .card-image {
+        width: 16rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: auto;
+        padding-block: 1.5rem;
+    }
+
+    .navlist {
+        display: none;
+    }
+
+    .hero {
+        min-height: 100vh;
+        padding-top: 2rem;
+        background-size: 90%;
+    }
+
+    .inner-hero {
+        padding: 2rem;
+        min-height: 45vh;
+        border-radius: 2rem;
+    }
+
+    h1 {
+        font-size: 18vw;
+        letter-spacing: 0.3rem;
+    }
+
+    .hero-center-image {
+        width: 40vw;
+        left: 50%;
+        top: 25%;
+    }
+
+    .hero-left-image,
+    .hero-right-image {
+        width: 18vw;
+    }
+
+    h2 {
+        font-size: 10vw;
+    }
+
+    .card-container {
+        flex-direction: column;
+        height: auto;
+        gap: 3rem;
+        align-items: stretch;
+    }
+
+    .card {
+        width: 100%;
+        min-height: 350px;
+    }
+
+    .card-image {
+        width: 18rem;
+        bottom: 28%;
+    }
+
+    .production {
+        padding: 5rem 2rem;
+    }
+
+    .production-left-image,
+    .production-right-image {
+        width: 15rem;
+    }
+
+    .healthy-section {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        max-width: 92%;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .icon {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 1rem;
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+
+    .inner-hero {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 20vw;
+    }
+
+    .hero-center-image {
+        width: 48vw;
+    }
+
+    .card {
+        padding: 10rem 1.5rem 2rem;
+    }
+
+    .card-image {
+        width: 15rem;
+    }
+
+    .production-left-image,
+    .production-right-image {
+        width: 10rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
 }
