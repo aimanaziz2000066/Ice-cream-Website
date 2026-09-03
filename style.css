@@ -283,3 +283,10 @@ align-items: flex-end;
     max-width: 650px;
     margin: auto;
 }
+
+.footer-bottom{
+    background: var(--text-color);
+    text-align: center;
+    padding-block: 3rem;
+    margin-top: 3rem;
+}
