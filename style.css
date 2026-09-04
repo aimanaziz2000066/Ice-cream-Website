@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
@@ -19,10 +18,10 @@ html {
 }
 
 :root {
-    --text-color: #342b0c;
+    --text-color: #321A12;
     --bg-color: #fefbeb;
     --inner-bg-color: #ede8d5;
-    --btn-color: #f3c30e;
+    --btn-color: #F5B942;
 }
 
 body {
@@ -171,19 +170,15 @@ h1 {
     position: absolute;
 
     /* POSITION */
-    left: 47%;
-    top: 10%;
-
+    left: 52%;
+    top: 20%;
     /* VERY BIG ICE CREAM */
     width: 60vw;
-
     z-index: 2;
 
     /* ROTATION */
     transform: translateX(-50%) rotate(30deg);
-
     transform-origin: center center;
-
     will-change: transform, top, width;
 }
 
@@ -262,12 +257,12 @@ h2 {
 ========================= */
 
 .card-image {
-    width: 20rem;
+    width: 25vw;
     position: absolute;
     bottom: 30%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 2;
 }
 
 .card-image img {
@@ -361,14 +356,14 @@ span {
 
 .production-right-image {
     position: absolute;
-    width: 28rem;
+    width: 25vw;
     bottom: 0;
-    right: 2%;
+    right: 0%;
 }
 
 .production-left-image {
     position: absolute;
-    width: 40vw;
+    width: 40.5vw;
     bottom: 0;
     left: 0;
     z-index: 3;
@@ -392,12 +387,12 @@ span {
 .milky-image img {
     display: block;
     position: relative;
-    bottom: -20px;
+    bottom: -27px;
     left: 0;
 }
 
 .healthy-section .content img {
-    width: 15rem;
+    width: 20rem;
     display: block;
     float: right;
 }
