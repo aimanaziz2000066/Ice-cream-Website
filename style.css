@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 /* =========================
    RESET
@@ -28,6 +30,7 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
 }
+
 
 /* =========================
    BASIC STYLING
@@ -61,6 +64,7 @@ img {
 .sections {
     padding-block: 3rem;
 }
+
 
 /* =========================
    NAVBAR
@@ -118,6 +122,7 @@ img {
     background: transparent;
 }
 
+
 /* =========================
    HERO SECTION
 ========================= */
@@ -143,6 +148,7 @@ img {
     min-height: 55vh;
 }
 
+
 /* =========================
    MAIN HEADING
 ========================= */
@@ -156,30 +162,24 @@ h1 {
     line-height: 0.9;
 }
 
+
 /* =========================
    CENTER ICE CREAM
 ========================= */
 
-/*
-   IMPORTANT:
-   Rotation ab IMAGE par nahi hai.
-   GSAP parent ko rotate karega.
-*/
-
 .hero-center-image {
     position: absolute;
 
+    /* POSITION */
     left: 47%;
-    top: 22%;
+    top: 10%;
 
-    width: 26vw;
+    /* VERY BIG ICE CREAM */
+    width: 60vw;
 
     z-index: 2;
 
-    /*
-      GSAP transform ko properly control karega.
-      CSS mein rotate() nahi lagana.
-    */
+    /* ROTATION */
     transform: translateX(-50%) rotate(30deg);
 
     transform-origin: center center;
@@ -187,17 +187,13 @@ h1 {
     will-change: transform, top, width;
 }
 
-/*
-   IMPORTANT:
-   Yahan rotate(30deg) bilkul nahi lagani.
-*/
-
 .hero-center-image img {
     width: 100%;
     height: auto;
     display: block;
     transform: none;
 }
+
 
 /* =========================
    LEFT & RIGHT HERO IMAGES
@@ -225,6 +221,7 @@ h1 {
     left: 0;
 }
 
+
 /* =========================
    SECTION HEADINGS
 ========================= */
@@ -238,6 +235,7 @@ h2 {
     font-family: "Bebas Neue", sans-serif;
     line-height: 1;
 }
+
 
 /* =========================
    PRODUCT CARDS
@@ -258,7 +256,10 @@ h2 {
     min-height: 300px;
 }
 
-/* Product image */
+
+/* =========================
+   CARD IMAGE
+========================= */
 
 .card-image {
     width: 20rem;
@@ -274,7 +275,10 @@ h2 {
     height: auto;
 }
 
-/* Card content */
+
+/* =========================
+   CARD CONTENT
+========================= */
 
 .card .content {
     justify-content: space-between;
@@ -290,6 +294,7 @@ span {
     color: var(--text-color);
 }
 
+
 /* =========================
    PARAGRAPH
 ========================= */
@@ -299,6 +304,7 @@ span {
     font-size: 0.95rem;
     padding: 1rem 0 2rem 0;
 }
+
 
 /* =========================
    PRODUCTION SECTION
@@ -327,6 +333,7 @@ span {
     color: var(--bg-color);
 }
 
+
 /* =========================
    BUTTON
 ========================= */
@@ -347,6 +354,7 @@ span {
     color: var(--btn-color);
 }
 
+
 /* =========================
    PRODUCTION IMAGES
 ========================= */
@@ -366,6 +374,7 @@ span {
     z-index: 3;
 }
 
+
 /* =========================
    HEALTHY SECTION
 ========================= */
@@ -375,7 +384,8 @@ span {
     padding-top: 5rem;
     align-items: flex-end;
 }
-.milky-image{
+
+.milky-image {
     z-index: 3;
 }
 
@@ -391,6 +401,7 @@ span {
     display: block;
     float: right;
 }
+
 
 /* =========================
    COMMITMENT SECTION
@@ -414,6 +425,7 @@ span {
     margin: auto;
 }
 
+
 /* =========================
    FOOTER
 ========================= */
@@ -430,8 +442,9 @@ span {
     font-size: 0.9rem;
 }
 
+
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 
 @media (max-width: 992px) {
@@ -449,7 +462,9 @@ span {
     }
 
     .hero-center-image {
-        width: 32vw;
+        width: 65vw;
+        left: 47%;
+        top: 8%;
     }
 
     .card-container {
@@ -464,6 +479,11 @@ span {
         width: 16rem;
     }
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
 
@@ -494,9 +514,9 @@ span {
     }
 
     .hero-center-image {
-        width: 40vw;
+        width: 72vw;
         left: 50%;
-        top: 25%;
+        top: 10%;
     }
 
     .hero-left-image,
@@ -539,6 +559,11 @@ span {
     }
 }
 
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
 @media (max-width: 480px) {
 
     .container {
@@ -569,7 +594,9 @@ span {
     }
 
     .hero-center-image {
-        width: 48vw;
+        width: 80vw;
+        left: 50%;
+        top: 8%;
     }
 
     .card {
