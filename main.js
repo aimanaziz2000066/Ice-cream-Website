@@ -10,7 +10,7 @@ var tl = gsap.timeline({
 tl.to(".hero-center-image",{
     top: "123%",
     left: "50%",
-    width: "35vw",
+    width: "56.2vw",
     rotate: "0",
 
 })
@@ -36,7 +36,7 @@ var tl1 = gsap.timeline({
 tl1.to(".hero-center-image",{
     top: "190%",
     left: "21.5%",
-    width: "35.8vw",
+    width: "59.5vw",
     rotate: "0",
 
 })
@@ -55,8 +55,8 @@ var tl2 = gsap.timeline({
 
 tl2.to(".hero-center-image",{
     top: "270.5%",
-    left: "30%",
-    width: "30.2vw",
+    left: "30.2%",
+    width: "59vw",
     rotate: "-50deg",
 
 })
